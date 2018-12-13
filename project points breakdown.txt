@@ -1,0 +1,105 @@
+REQUIREMENTS
+
+[2 Percent of grade]
+Player character
+-Interact with platforms, enemies and boundaries
+-Capsule is suffiecient for model
+-Ability to double jump
+-Switch directions mid air
+-Run holding CTRL
+-Deal damage by goomba stomp
+-Side collision deals damage to player
+-Left to right progression
+-Can move any direction (left right up down?)
+-Main camera follows character (remember use late update)
+-camera can't move left 
+-player cant be off screen (block with borders on camera)
+
+[5 percent of grade]
+enemies
+-5 enemy types
+-different behaviors
+
+MANDATORY ENEMIES
+Enemy 1
+-first enemy must shoot projectiles
+-projectiles affected by gravity
+-projectiles bounce
+-fire rate up to creator
+-projectiles should always shoot towards player
+
+Enemy 2
+-Enemy teleports to the player every 5 seoncds unaffected by gravity
+-one second after teleportation enemy must create explosion that applies force
+-must negatively impact the player (reduce health, removes powerup, etc)
+-negative impact must be proportional to the distance from the player to the explosion
+-during one second phase after teleportation explosion must be visable and enemy is immune to damage
+-enemy must be transparent to show immunity
+-*You must research particle systems in order to figure out how to make a visible explosion. *
+
+[2 percent of grade]
+Collectables
+-Collectables are considered currency
+-Must save amount of collectables collected
+-collectables must be spawned and placed on objects and have the ability to collide
+
+[4 percent of grade]
+Powerups
+-five different types of powerups
+-powerups must be collectable items in the game
+-the player must change colors based on the powerup
+
+MANDATORY POWERUPS
+Powerup one
+-One powerup must allow the player to click on a position and teleport to it
+-Player must be invulnerable while teleporting for 2 seconds, teleport resets double jump after teleporting. 
+-Teleport must have 5 charges and a visual indication of how many charges are left
+
+Powerup two
+-One powerup must allow the player to click in any direction and shoot a laser beam from the player
+-The laser should kill any enemy in its path, should be able to pass through multiple enemies and all other objects in the world
+-powerup must only last 30 seconds
+
+*For instance, one powerup may provide a shield that allows the character to take an extra hit before dying, and another might make the character shoot a projectile when alt is hit. Be creative. The powerups must be sufficiently different and interesting for full marks. Powerups should be prefabs so they can be spawned in through code. Two of the powerups are specified at the end of this document, and the remaining three are up to you.*
+
+[2 percent of your grade]
+Platforms
+-must have platforms that move in the game
+-some must move horizontally and some move vertically
+-must have platforms that do not move
+-character must be able to interact with platforms
+-Must have death zones that do damage or destory the player on entry
+
+[14 percent of grade]
+Level design
+-each level must be procedurally generated
+-positions of enemies powerups, collectables, platforms and other game elements must be generated using code
+-after ten generated sections spawn a level complete zone
+-when player is half way through zone the next area must spawn
+-when section is off screen it must be destroyed (zones completed on left)
+-there needs to be several different floors for the zones, there must be gaps the player can fall through and die
+
+[2 percent of your grade]
+Scene transitions 
+-full grades must need a splash screen
+-main menu scene
+-three different levels that differ enemy types and powerups that exist in them
+-scene that contains a description of the game
+-main menu scene must provide navigation buttons to various levels and show amount of current collectable items collected
+-when player wins or loses there must be appripriate events
+
+[2 percent of your grade]
+In-game display
+-Must have an in-game display that shows
+-Current total collectable count, count of enemies destroyed in this level
+-Current level the player is one
+-A pause button/resume button
+-A button that exits to the main menu
+
+[2 percent of your grade]
+-presentation with prof or write up
+
+[5 percent of grade]
+-Add custom twists, boss enemy character, extra power ups, collectables, audio
+*You must not go directly against anything specified here (for example change how your camera functions), but you can add extra elements to the game. Make this game your own.*
+
