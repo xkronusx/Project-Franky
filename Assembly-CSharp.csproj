@@ -61,20 +61,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\colletables.cs" />
-    <Compile Include="Assets\EnemyCleanup.cs" />
-    <Compile Include="Assets\PlayerInv.cs" />
     <Compile Include="Assets\Scripts\BulletHitDetection.cs" />
+    <Compile Include="Assets\Scripts\colletables.cs" />
     <Compile Include="Assets\Scripts\DamageCheck.cs" />
+    <Compile Include="Assets\Scripts\EnemyCleanup.cs" />
+    <Compile Include="Assets\Scripts\enemySpawner.cs" />
+    <Compile Include="Assets\Scripts\floorMover.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\GroundCheck.cs" />
+    <Compile Include="Assets\Scripts\laserBeamShot.cs" />
+    <Compile Include="Assets\Scripts\laserPowerup.cs" />
+    <Compile Include="Assets\Scripts\laserPowerUpTimer.cs" />
+    <Compile Include="Assets\Scripts\levelGeneration.cs" />
     <Compile Include="Assets\Scripts\LoadScene.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
-    <Compile Include="Assets\ShootingEnemy.cs" />
-    <Compile Include="Assets\Teleporter.cs" />
-    <Compile Include="Assets\tpPowerup.cs" />
+    <Compile Include="Assets\Scripts\PlayerInv.cs" />
+    <Compile Include="Assets\Scripts\ShootingEnemy.cs" />
+    <Compile Include="Assets\Scripts\Teleporter.cs" />
+    <Compile Include="Assets\Scripts\tpPowerup.cs" />
     <Compile Include="Assets\UnityParticleMats\Shared\Scripts\DecalDestroyer.cs" />
     <Compile Include="Assets\UnityParticleMats\Shared\Scripts\ExtinguishableFire.cs" />
     <Compile Include="Assets\UnityParticleMats\Shared\Scripts\GunAim.cs" />
@@ -84,6 +90,7 @@
     <Compile Include="Assets\UnityParticleMats\Shared\Scripts\ParticleMenu.cs" />
     <Compile Include="Assets\UnityParticleMats\TutorialInfo\Scripts\Readme.cs" />
     <None Include="Assets\UnityParticleMats\Shared\Shaders\SurfaceShader_VC.shader" />
+    <None Include="Assets\Wood texture floor_01\readme.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Franky/Documents/Project - Franky - 104137085/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

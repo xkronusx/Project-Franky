@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33a5b7a1900596f4e908b3e0cc8d86ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 4833788718330630, guid: 36b43c33cff9d4346b8fb1763dd9bef6, type: 2}
   teleporterRb: {fileID: 0}
   colliders: []
   canDamagePlayer: 1

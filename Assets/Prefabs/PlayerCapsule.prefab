@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114097268176857502}
   - component: {fileID: 114930193158503192}
   - component: {fileID: 114859318278152184}
+  - component: {fileID: 114214109081037098}
   m_Layer: 0
   m_Name: PlayerCapsule
   m_TagString: Player
@@ -117,6 +118,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBeDamaged: 1
+--- !u!114 &114214109081037098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1327696715746982}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c623e4ecf8438ad49a25328a98d1f167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114379321542524100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -134,6 +146,11 @@ MonoBehaviour:
   jumps: 0
   running: 0
   testvalue: 1
+  tpPoweredUp: 0
+  tpCharges: 0
+  laserPoweredUp: 0
+  laserShot: {fileID: 1060261637132416, guid: 2b62ba0b4f2c1844096cfe9936e62c56, type: 2}
+  currShot: {fileID: 0}
 --- !u!114 &114859318278152184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -159,7 +176,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 1
   y: 1
+  currentCoins: 0
   showHealth: {fileID: 0}
+  collectableShow: {fileID: 0}
 --- !u!114 &114958418526483486
 MonoBehaviour:
   m_ObjectHideFlags: 1
