@@ -10,6 +10,8 @@ public class PlayerControls : MonoBehaviour {
     public float jumps = 0;
     public bool running = false;
     public float testvalue = 1f;
+    public bool tpPoweredUp = false;
+    public int tpCharges = 0;
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
@@ -63,7 +65,7 @@ public class PlayerControls : MonoBehaviour {
         Vector3 maxDirection = new Vector3(Mathf.Sin(brad), -Mathf.Cos(brad), 0);
         Debug.DrawRay(transform.position, maxDirection * 5.0f, Color.red);
         */
-        
+
     }
 
     void FixedUpdate()
@@ -84,7 +86,8 @@ public class PlayerControls : MonoBehaviour {
         {
             rb.AddForce(0, (-1 * move), 0, ForceMode.Impulse);
         }
-        if (Input.GetKey(KeyCode.LeftControl) && running == false) {
+        if (Input.GetKey(KeyCode.LeftControl) && running == false)
+        {
             move *= 2;
             running = true;
         }
@@ -96,17 +99,51 @@ public class PlayerControls : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space) && jumps < 2)
         {
             rb.AddForce(0, jump, 0, ForceMode.Impulse);
-            ++jumps;
+            jumps++;
         }
+        if (Input.GetButtonDown("Fire1") && tpPoweredUp == true)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //Debug.Log("Mouse position on mouse button press: " + Input.mousePosition);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                //print("point one: " + hit.point.x + " point two: " + hit.point.y);
+                if (hit.point.y > 0)
+                {
+                    this.transform.position = new Vector3(hit.point.x, hit.point.y, 0);
+                    GetComponent<DamageCheck>().canBeDamaged = false;
+                    Camera.main.GetComponent<PlayerInv>().playerIsSafe = true;
+                    tpCharges--;
+                    if (tpCharges == 0) {
+                        tpPoweredUp = false;
+                    }
+                    StartCoroutine(invFrames());
+                }
+            }
+        }
+    }
+
+    IEnumerator invFrames()
+    {
+        //print("before");
+        yield return new WaitForSeconds(2);
+        GetComponent<DamageCheck>().canBeDamaged = true;
+        Camera.main.GetComponent<PlayerInv>().playerIsSafe = false;
+        //print("after");
+
     }
     void OnCollisionEnter(Collision col)
     {
         //print("this" + this.gameObject);
         //print(col.gameObject);
         //if (col.gameObject.transform.position.y < this.transform.position.y && col.gameObject.tag == "Enemy") {
-        if (rb.transform.position.y < this.transform.position.y && col.gameObject.tag == "Enemy")
+        if (rb.transform.position.y > col.transform.position.y && col.gameObject.tag == "Enemy" && col.gameObject.GetComponent<EnemyCleanup>().canBeHurt == true)
         {
             print("DAMAGE ENEMY");
+            col.gameObject.GetComponent<EnemyCleanup>().enemyHealth -= 10;
+            rb.AddExplosionForce(500f,this.transform.position,500f);
+            //this.GetComponent<Rigidbody>().AddExplosionForce(500f, hit.collider.gameObject.GetComponent<Rigidbody>().transform.position, 500f);
         }
     }
 

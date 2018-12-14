@@ -39,7 +39,7 @@ public class ShootingEnemy : MonoBehaviour {
                 bBalls.GetComponent<Rigidbody>().AddForce(playerPos.x * 600, playerPos.y * 800, 0);
             }
             
-            print(playerPos);
+            //print(playerPos);
         }
 
     }

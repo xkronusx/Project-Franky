@@ -61,7 +61,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\colletables.cs" />
     <Compile Include="Assets\EnemyCleanup.cs" />
+    <Compile Include="Assets\PlayerInv.cs" />
     <Compile Include="Assets\Scripts\BulletHitDetection.cs" />
     <Compile Include="Assets\Scripts\DamageCheck.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
@@ -71,6 +73,17 @@
     <Compile Include="Assets\Scripts\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\ShootingEnemy.cs" />
+    <Compile Include="Assets\Teleporter.cs" />
+    <Compile Include="Assets\tpPowerup.cs" />
+    <Compile Include="Assets\UnityParticleMats\Shared\Scripts\DecalDestroyer.cs" />
+    <Compile Include="Assets\UnityParticleMats\Shared\Scripts\ExtinguishableFire.cs" />
+    <Compile Include="Assets\UnityParticleMats\Shared\Scripts\GunAim.cs" />
+    <Compile Include="Assets\UnityParticleMats\Shared\Scripts\GunShoot.cs" />
+    <Compile Include="Assets\UnityParticleMats\Shared\Scripts\ParticleCollision.cs" />
+    <Compile Include="Assets\UnityParticleMats\Shared\Scripts\ParticleExamples.cs" />
+    <Compile Include="Assets\UnityParticleMats\Shared\Scripts\ParticleMenu.cs" />
+    <Compile Include="Assets\UnityParticleMats\TutorialInfo\Scripts\Readme.cs" />
+    <None Include="Assets\UnityParticleMats\Shared\Shaders\SurfaceShader_VC.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/Franky/Documents/Project - Franky - 104137085/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

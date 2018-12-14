@@ -14,10 +14,11 @@ public class DamageCheck : MonoBehaviour {
     void Update()
     {
         RaycastHit hit;
+        /*
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 1f))
         {
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.yellow);
-            //Debug.Log("Did Hit floor");
+            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.down) * hit.distance, Color.blue);
+            Debug.Log("Did Hit floor");
             
             if (hit.collider.gameObject.tag == "Enemy")
             {
@@ -26,6 +27,7 @@ public class DamageCheck : MonoBehaviour {
 
             }
         }
+        */
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.right), out hit, 0.6f) || Physics.Raycast(transform.position, transform.TransformDirection(Vector3.left), out hit, 0.6f))
         {
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.right) * hit.distance, Color.yellow);

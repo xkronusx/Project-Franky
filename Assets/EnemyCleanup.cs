@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class EnemyCleanup : MonoBehaviour {
     public Rigidbody enemyRb;
+    public int enemyHealth;
+    public bool canBeHurt = true;
 	// Use this for initialization
 	void Start () {
         enemyRb = GetComponent<Rigidbody>();
+        if(this.gameObject.tag == "Enemy")
+        {
+            enemyHealth = 20;
+        }
 	}
 	
 	// Update is called once per frame
@@ -15,7 +21,11 @@ public class EnemyCleanup : MonoBehaviour {
         {
             Destroy(this.gameObject);
         }
-	}
+        if (enemyHealth == 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
     void OnCollisionEnter(Collision col)
     {
         if(col.gameObject.name == "LeftWall")
