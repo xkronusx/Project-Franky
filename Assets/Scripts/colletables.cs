@@ -6,6 +6,7 @@ public class colletables : MonoBehaviour {
 
 	// Use this for initialization
     public int collectedCoins;
+    public int coinHighScore;
 	void Start () {
 
     }
@@ -14,6 +15,7 @@ public class colletables : MonoBehaviour {
 	void Update () {
         transform.Rotate(new Vector3(30, 15, 45) * Time.deltaTime);
         collectedCoins = PlayerPrefs.GetInt("collectableCount");
+        coinHighScore = PlayerPrefs.GetInt("coinHighestScore");
     }
 
     void OnTriggerEnter(Collider col)
@@ -23,6 +25,10 @@ public class colletables : MonoBehaviour {
         {
             collectedCoins++;
             PlayerPrefs.SetInt("collectableCount", collectedCoins);
+            if (collectedCoins > coinHighScore) {
+                coinHighScore = collectedCoins;
+                PlayerPrefs.SetInt("coinHighestScore", coinHighScore);
+            }
             Destroy(this.gameObject);
         }
     }

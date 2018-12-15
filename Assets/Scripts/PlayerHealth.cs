@@ -7,12 +7,22 @@ public class PlayerHealth : MonoBehaviour {
     public static int playersHealth = 100;
     public float x = 1;
     public float y = 1;
+    public GameObject gameOverCanvas;
     public int currentCoins;
+    public int currentHighCoins;
+    public int currentEnemyCount;
     public Text showHealth;
     public Text collectableShow;
+    public Text collectableHighShow;
+    public Text currentPowerUpStatus;
+    public Text defeatedNumOfEnemies;
+    void Awake()
+    {
+        PlayerPrefs.SetInt("enemiesDestroyed", 0);
+    }
     void Start()
     {
-        
+        playersHealth = 100;
     }
     void Update()
     {
@@ -27,7 +37,19 @@ public class PlayerHealth : MonoBehaviour {
         */
         currentCoins = PlayerPrefs.GetInt("collectableCount");
         collectableShow.text = "Coins: " + currentCoins;
-        Debug.DrawRay(transform.position, transform.TransformDirection(x, y, 0), Color.blue);
+        currentHighCoins = PlayerPrefs.GetInt("coinHighestScore");
+        collectableHighShow.text = "Coins Highscore: " + currentHighCoins;
+        currentEnemyCount = PlayerPrefs.GetInt("enemiesDestroyed");
+        defeatedNumOfEnemies.text = "Enemies Defeated: " + currentEnemyCount;
+        //Debug.DrawRay(transform.position, transform.TransformDirection(x, y, 0), Color.blue);
         showHealth.text = "Health: " + playersHealth;
+        if (playersHealth < 0)
+        {
+            if (Time.timeScale == 1.0f) {
+                Time.timeScale = 0.0f;
+            }
+            gameOverCanvas.gameObject.SetActive(true);
+            Camera.main.GetComponent<PauseMenu>().gameOverText.text = "You have died!";
+}
     }
 }

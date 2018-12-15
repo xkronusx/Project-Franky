@@ -16,9 +16,10 @@ public class laserPowerUpTimer : MonoBehaviour {
     IEnumerator laserTimer()
     {
         //print("before");
-        print(Time.time);
+        //print(Time.time);
         yield return new WaitForSeconds(30);
         this.GetComponent<PlayerControls>().laserPoweredUp = false;
+        this.GetComponent<Renderer>().material = this.GetComponent<PlayerControls>().playerMainMat;
         print(Time.time);
         //print("after");
         this.enabled = false;

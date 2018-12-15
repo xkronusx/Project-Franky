@@ -17,18 +17,22 @@ public class LoadScene : MonoBehaviour {
     
     public void mainMenuLoad()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("MainMenu");
     }
     public void LevelOneLoad()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("LevelOne");
     }
     public void LevelTwoLoad()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("LevelTwo");
     }
     public void LevelThreeLoad()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("LevelThree");
     }
     /*

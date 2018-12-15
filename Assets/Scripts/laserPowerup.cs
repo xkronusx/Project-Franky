@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class laserPowerup : MonoBehaviour {
-
+    public Material laserMat;
     // Use this for initialization
     void Start()
     {
@@ -23,6 +23,7 @@ public class laserPowerup : MonoBehaviour {
         {
             if (col.GetComponent<PlayerControls>().laserPoweredUp != true)
             {
+                col.gameObject.GetComponent<Renderer>().material = laserMat;
                 col.GetComponent<PlayerControls>().laserPoweredUp = true;
                 col.GetComponent<laserPowerUpTimer>().enabled = true;
                 //StartCoroutine(col.GetComponent<PlayerControls>().laserTimer());

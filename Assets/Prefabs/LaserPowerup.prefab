@@ -59,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4438090718e59ca46854fec77a0aed73, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -124,3 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51293b54f67eee4980c018d3d4727de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laserMat: {fileID: 2100000, guid: 0d9d1e9a0f9c02d49969ed956a3e449a, type: 2}

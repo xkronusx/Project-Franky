@@ -15,6 +15,7 @@ public class PlayerControls : MonoBehaviour {
     public bool laserPoweredUp = false;
     public GameObject laserShot;
     public GameObject currShot;
+    public Material playerMainMat;
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
@@ -119,14 +120,17 @@ public class PlayerControls : MonoBehaviour {
                     GetComponent<DamageCheck>().canBeDamaged = false;
                     Camera.main.GetComponent<PlayerInv>().playerIsSafe = true;
                     tpCharges--;
+                    this.GetComponent<PlayerHealth>().currentPowerUpStatus.text = "Teleporter charges: " + tpCharges;
                     if (tpCharges == 0) {
                         tpPoweredUp = false;
+                        this.GetComponent<Renderer>().material = playerMainMat;
+                        this.GetComponent<PlayerHealth>().currentPowerUpStatus.text = " ";
                     }
                     StartCoroutine(invFrames());
                 }
             }
         }
-        if (Input.GetButtonDown("Fire1") && laserPoweredUp == true)
+        if (Input.GetButtonDown("Fire2") && laserPoweredUp == true)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             //Vector3 test = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,0));
@@ -162,7 +166,7 @@ public class PlayerControls : MonoBehaviour {
                 Vector3 shotDirection = new Vector3(shotHit.point.x - this.gameObject.transform.position.x, shotHit.point.y - this.gameObject.transform.position.y, 0).normalized;
                 //Vector3 dir = new Vector3(test.x - this.gameObject.transform.position.x, test.y - this.gameObject.transform.position.y, 0).normalized;
                 Debug.DrawLine(myPos, myPos + shotDirection * 100, Color.red, Mathf.Infinity);
-                print(shotDirection);
+                //print(shotDirection);
                 currShot.GetComponent<Rigidbody>().velocity = shotDirection * 10;
                 currShot.transform.rotation = Quaternion.LookRotation(currShot.GetComponent<Rigidbody>().velocity);
                 if (shotDirection.x > 0)

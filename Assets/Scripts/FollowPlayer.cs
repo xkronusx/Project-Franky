@@ -22,10 +22,12 @@ public class FollowPlayer : MonoBehaviour
 
     void LateUpdate()
     {
-        myCamera.transform.position = new Vector3(myCamera.transform.position.x, myPlayer.transform.position.y, -10);
-        if (myPlayer.transform.position.x > myCamera.transform.position.x && bossFight == false)
-        {
-            myCamera.transform.position =  new Vector3(myPlayer.transform.position.x, myPlayer.transform.position.y, -10);
+        if (bossFight != true) {
+            myCamera.transform.position = new Vector3(myCamera.transform.position.x, myPlayer.transform.position.y, -10);
+            if (myPlayer.transform.position.x > myCamera.transform.position.x && bossFight == false)
+            {
+                myCamera.transform.position = new Vector3(myPlayer.transform.position.x, myPlayer.transform.position.y, -10);
+            }
         }
     }
 }

@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 64438965737783844}
   - component: {fileID: 54175334817885724}
   - component: {fileID: 114540923797294238}
+  - component: {fileID: 114797830256382128}
   m_Layer: 0
   m_Name: GroundPlaneBossFloor
   m_TagString: Ground
@@ -127,3 +128,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundRb: {fileID: 0}
+--- !u!114 &114797830256382128
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1639594043710810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57463467919b38e47b29346af04a7c71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelBoss: {fileID: 1638348180116652, guid: 0949a703f53dc794c86ea4f4e27bb64c, type: 2}

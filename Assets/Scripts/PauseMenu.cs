@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour {
 
     public GameObject PauseCanvas;
     private bool paused = false;
-	// Use this for initialization
-	void Start ()
+    public Text gameOverText;
+    // Use this for initialization
+    void Start ()
     {
 		PauseCanvas.gameObject.SetActive(false);
     }

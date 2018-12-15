@@ -257,6 +257,12 @@ MonoBehaviour:
   enemyRb: {fileID: 0}
   enemyHealth: 0
   canBeHurt: 1
+  coinsFab: {fileID: 1499052442001646, guid: 8872a660d1a73294196ed4c70badf45d, type: 2}
+  powerUps:
+  - {fileID: 1051978059832792, guid: 2e0dcb7dad9807f4cbcf18bedb4c297c, type: 2}
+  - {fileID: 1833958658132490, guid: 19dc96a0712d79c4ca2dee215e4bbf04, type: 2}
+  dropRate: 0
+  dropType: 0
 --- !u!136 &136983117954750470
 CapsuleCollider:
   m_ObjectHideFlags: 1

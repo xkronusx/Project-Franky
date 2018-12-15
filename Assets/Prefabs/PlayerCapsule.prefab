@@ -64,7 +64,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 1b05de748230b7e4eae65630e03a3d8c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -151,6 +151,7 @@ MonoBehaviour:
   laserPoweredUp: 0
   laserShot: {fileID: 1060261637132416, guid: 2b62ba0b4f2c1844096cfe9936e62c56, type: 2}
   currShot: {fileID: 0}
+  playerMainMat: {fileID: 2100000, guid: 087ee8fa582e07c48bee90563a94a107, type: 2}
 --- !u!114 &114859318278152184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -177,8 +178,11 @@ MonoBehaviour:
   x: 1
   y: 1
   currentCoins: 0
+  currentHighCoins: 0
   showHealth: {fileID: 0}
   collectableShow: {fileID: 0}
+  collectableHighShow: {fileID: 0}
+  currentPowerUpStatus: {fileID: 0}
 --- !u!114 &114958418526483486
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class laserBeamShot : MonoBehaviour {
 
-	// Use this for initialization
+    // Use this for initialization
+    public float cullShot = 5f;
 	void Start () {
-		
+        Destroy(this.gameObject, cullShot);
 	}
 	
 	// Update is called once per frame
@@ -19,7 +20,7 @@ public class laserBeamShot : MonoBehaviour {
 
         if (col.gameObject.tag == "Enemy")
         {
-            Destroy(col.gameObject);
+            col.gameObject.GetComponent<EnemyCleanup>().enemyHealth = 0;
         }
     }
 }

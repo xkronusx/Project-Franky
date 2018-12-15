@@ -60,7 +60,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6a41d684c16412946a21825f95f54dfe, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -130,6 +130,12 @@ MonoBehaviour:
   enemyRb: {fileID: 0}
   enemyHealth: 0
   canBeHurt: 1
+  coinsFab: {fileID: 1499052442001646, guid: 8872a660d1a73294196ed4c70badf45d, type: 2}
+  powerUps:
+  - {fileID: 1051978059832792, guid: 2e0dcb7dad9807f4cbcf18bedb4c297c, type: 2}
+  - {fileID: 1833958658132490, guid: 19dc96a0712d79c4ca2dee215e4bbf04, type: 2}
+  dropRate: 0
+  dropType: 0
 --- !u!136 &136414224536543102
 CapsuleCollider:
   m_ObjectHideFlags: 1
